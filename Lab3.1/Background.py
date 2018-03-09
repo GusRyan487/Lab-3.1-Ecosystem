@@ -46,7 +46,7 @@ class Background(object):
 
 
 win.setBackground(color_rgb(20, 200, 255))
-back = Background('','',win)
+back = Background(win)
 ship = basicShip(625,400,win)
 win.getMouse()
 win.close()
