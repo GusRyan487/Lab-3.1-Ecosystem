@@ -6,10 +6,10 @@ win = GraphWin("Navy Fleet", 1000, 650, autoflush=False)
 
 class Background(object):
 
-    def __init__(self, house, land,win):
-        self.land = land
+    def __init__(self,win):
+        #self.land = land
         self.win = win
-        self.house = house
+        #self.house = house
         self.drawHouse()
         self.drawLand()
         self.drawOcean()
