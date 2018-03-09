@@ -1,59 +1,52 @@
 from graphics import *
-win = GraphWin("Navy Fleet",1000,650, autoflush=False)
+from BasicShip import *
 
-
-
-
+win = GraphWin("Navy Fleet", 1000, 650, autoflush=False)
 
 
 class Background(object):
-    def drawOcean(win):
-        ocean = Rectangle(Point(0,450), Point(999,649))
-        ocean.setFill(color_rgb(15, 144, 219))
-        ocean.draw(win)
-    def __init__(self,house,land):
+
+    def __init__(self, house, land,win):
         self.land = land
+        self.win = win
         self.house = house
-        
+        self.drawHouse()
+        self.drawLand()
+        self.drawOcean()
+        self.drawSun()
 
+    def drawOcean(self):
+        ocean = Rectangle(Point(0, 450), Point(999, 649))
+        ocean.setFill(color_rgb(15, 144, 219))
+        ocean.draw(self.win)
 
-
-    def drawLand(self,win):
-        land = Rectangle(Point(0,300), Point(300,450))
+    def drawLand(self):
+        land = Rectangle(Point(0, 300), Point(300, 450))
         land.setFill(color_rgb(249, 235, 184))
-        land.draw(win)
-    def drawHouse(self,win):
-        house = Rectangle(Point(100,200), Point(225,300))
-        house.setFill(color_rgb(73,49,5))
+        land.draw(self.win)
+
+    def drawHouse(self):
+        house = Rectangle(Point(100, 200), Point(225, 300))
+        house.setFill(color_rgb(73, 49, 5))
         house.draw(win)
-        roof = Polygon(Point(100,200), Point(125,175), Point(200,175), Point(225,200))
-        roof.setFill(color_rgb(40,27,2))
+        roof = Polygon(Point(100, 200), Point(125, 175), Point(200, 175), Point(225, 200))
+        roof.setFill(color_rgb(40, 27, 2))
         roof.draw(win)
-        door = Rectangle(Point(125,300), Point(150,250))
+        door = Rectangle(Point(125, 300), Point(150, 250))
         door.setFill(color_rgb(196, 135, 70))
         door.draw(win)
-        window = Rectangle(Point(175,250), Point(200,225))
+        window = Rectangle(Point(175, 250), Point(200, 225))
         window.setFill(color_rgb(104, 222, 255))
-        window.draw(win)
-    def drawSun(win):
-        sun = Circle(Point(999,0), 100)
-        sun.setFill("yellow")
-        sun.draw(win)
+        window.draw(self.win)
 
-win.setBackground(color_rgb(20,200,255))
-Background.drawOcean(win)
-Background.drawLand(win)
-Background.drawHouse(win)
-Background.drawSun(win)
+    def drawSun(self):
+        sun = Circle(Point(999, 0), 100)
+        sun.setFill("yellow")
+        sun.draw(self.win)
+
+
+win.setBackground(color_rgb(20, 200, 255))
+back = Background('','',win)
+ship = basicShip(625,400,win)
 win.getMouse()
 win.close()
-
-class Damage()
-
-
-
-
-
-
-
-
