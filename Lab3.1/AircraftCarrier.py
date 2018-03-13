@@ -8,11 +8,10 @@ class AircraftCarrier(basicShip):
         if ran < 10:
             ran = '0' + str(ran)
         self.acName += str(ran)
+        self.plane()
 
+    def plane(self):
+        '''Draws plane on ship'''
+        plane = Image(Point(500,325),'plane_v2.png')
+        plane.draw(self.win)
 
-#ac=AircraftCarrier(2,2,'')
-#print(self.acName)
-
-
-    #def plane(self):
-        #self.body = Oval(Point())
