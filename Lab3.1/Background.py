@@ -1,6 +1,8 @@
 from graphics import *
 from BasicShip import *
 import time
+
+
 win = GraphWin("Navy Fleet", 1000, 650, autoflush=False)
 
 
@@ -48,7 +50,6 @@ class Background(object):
 win.setBackground(color_rgb(20, 200, 255))
 back = Background(win)
 ship = basicShip(625,400,win)
-time.sleep(0)
-ship.move(0,0,ship)
+ship.move(500,400,win)
 win.getMouse()
 win.close()
