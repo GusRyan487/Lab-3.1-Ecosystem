@@ -7,9 +7,12 @@ class AircraftCarrier(basicShip):
         ran = random.randint(1, 100)
         if ran < 10:
             ran = '0' + str(ran)
-            self.acName += ran
+        self.acName += str(ran)
+
+
+#ac=AircraftCarrier(2,2,'')
+#print(self.acName)
 
 
     #def plane(self):
         #self.body = Oval(Point())
-
