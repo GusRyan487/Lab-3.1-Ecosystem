@@ -9,9 +9,11 @@ class AircraftCarrier(basicShip):
             ran = '0' + str(ran)
         self.acName += str(ran)
         self.plane()
-
-    def plane(self):
+        
+    def _plane(self):
         '''Draws plane on ship'''
-        plane = Image(Point(500,325),'plane_v2.png')
-        plane.draw(self.win)
+        self.plane = Image(Point(self.x + 75,self.y - 20),'plane_v2.png')
+        self.plane.draw(self.win)
+
+    def dropTheBomb(self):
 
