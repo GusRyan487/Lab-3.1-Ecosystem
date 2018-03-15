@@ -22,8 +22,12 @@ class Destroyer(basicShip):
         turret = Arc(Point(self.x + 25, self.y+25), Point(self.x+100, self.y-25), 0, 180, "chord")
         turret.setFill(color_rgb(150, 155, 163))
         turret.draw(self.win)
+        self.explosion = Image(Point(self.x - 100, self.y - 10), 'nope.png')
+        self.explosion.draw(self.win)
 
     #def missle(self):
+
+
 
 
 
