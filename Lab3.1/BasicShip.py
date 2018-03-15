@@ -6,7 +6,6 @@ class basicShip(object):
         self.x = x
         self.y = y
         self.color = color
-        self.hit = False
         self.win = win
         self._hull()
         self._controlCenter()
@@ -38,6 +37,7 @@ class basicShip(object):
 
     def move(self,x,y,win):
         '''Moves ship'''
+        time.sleep(.5)
         self.x = x
         self.y = y
         self.hull.undraw()
@@ -48,5 +48,3 @@ class basicShip(object):
         self._controlCenter()
         self.addX = 165.5 + (self.x - x)
         self._windows()
-
-
