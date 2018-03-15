@@ -1,5 +1,5 @@
 from graphics import *
-from basicShip import *
+from BasicShip import *
 from Destroyer import *
 from AircraftCarrier import *
 
@@ -9,9 +9,7 @@ win = GraphWin("Navy Fleet", 1000, 650, autoflush=False)
 class Background(object):
 
     def __init__(self,win):
-
         self.win = win
-
         self.drawHouse()
         self.drawLand()
         self.drawOcean()
@@ -63,12 +61,15 @@ class Background(object):
             xtraBlast.setFill("white")
             xtraBlast.draw(self.win)
             xtraBlast.setOutline("white")
-        else:
-            self.shell = True
 
 
 
-
+win.setBackground(color_rgb(20, 200, 255))
+back = Background(win)
+ac= AircraftCarrier(625,400,win)
+ac.acmove(500,400)
+ac.dropTheBomb()
+##################33aREMOVE HOUSE
 
 
 
