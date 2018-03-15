@@ -35,7 +35,7 @@ class basicShip(object):
             self.windows.append(window)
             self.addX += 15
 
-    def move(self,x,y,win):
+    def move(self,x,y):
         '''Moves ship'''
         time.sleep(.5)
         self.x = x
