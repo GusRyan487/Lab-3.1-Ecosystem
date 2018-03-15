@@ -16,18 +16,14 @@ class Destroyer(basicShip):
 
     def drawTurret(self):
         """drawing an arc for a turret and a gun to shoot the land"""
-        gun = Rectangle(Point(self.x-50,self.y - 12.5), Point(self.x + 25,self.y + 0))
+        gun = Rectangle(Point(self.x-50,self.y - 12.5), Point(self.x + 50,self.y - 5))
         gun.setFill(color_rgb(150, 155, 163))
         gun.draw(self.win)
-        turret = Arc(Point(650, 425), Point(725, 375), 0, 180, "chord")
+        turret = Arc(Point(self.x + 25, self.y+25), Point(self.x+100, self.y-25), 0, 180, "chord")
         turret.setFill(color_rgb(150, 155, 163))
         turret.draw(self.win)
 
     #def missle(self):
-
-
-
-   
 
 
 
