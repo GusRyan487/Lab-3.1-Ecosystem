@@ -11,7 +11,7 @@ class AircraftCarrier(basicShip):
 
     def createAcName(self):
         '''Creates Aircraft carriers number'''
-        ran = random.randint(1, 100)
+        ran = random.randint(1, 99)
         if ran < 10:
             ran = '0' + str(ran)
         self.acName += str(ran)
@@ -21,13 +21,27 @@ class AircraftCarrier(basicShip):
         '''Draws plane on ship'''
         self.plane = Image(Point(self.x + 75, self.y - 20), 'plane_v2.png')
         self.plane.draw(self.win)
-        self.bomb = Image(Point(500,300),'bomb.png')
-        self.bomb.draw(self.win)
+        self.bomb = Image(Point(175,0),'bomb.png')
 
-    def move(self,x,y,win):
-        super(AircraftCarrier,self).move(x,y,win)
+    def acmove(self,x,y):
+        self.move(x,y)
         self.plane.undraw()
-        self.plane.draw(win)
+        self._plane()
+
+    def dropTheBomb(self):
+        dy = 420
+        while dy != 100:
+            self.plane.move( -6.25, -5)
+            dy -= 5
+        self.bomb.draw(self.win)
+        dy = 100
+        while dy != 300:
+            self.bomb.move(0,10)
+            dy += 10
+        self.bomb.undraw()
+        self.boom = Image(Point(150,237.5),'nuke.png')
+        self.boom.draw(self.win)
+
 
 
 
