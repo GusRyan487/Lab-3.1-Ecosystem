@@ -1,8 +1,6 @@
 To do:
-#Docstrings
+Docstrings
 Plane
-#move window
-text
 explosion
 bomb
-test file
+test file/text
