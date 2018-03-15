@@ -1,5 +1,5 @@
 from graphics import *
-from BasicShip import *
+from basicShip import *
 from Destroyer import *
 from AircraftCarrier import *
 
@@ -64,17 +64,11 @@ class Background(object):
             xtraBlast.draw(self.win)
             xtraBlast.setOutline("white")
         else:
-            print("Your island survives another day")
+            self.shell = True
 
 
 
-win.setBackground(color_rgb(20, 200, 255))
-back = Background(win)
-ship = basicShip(625,400,win)
-ac= AircraftCarrier(2,2,win)
-print(ac.acName)
-dest = Destroyer(2,2,win)
-print(dest.dName)
+
 
 
 
