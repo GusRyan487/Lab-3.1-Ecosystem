@@ -1,6 +1,4 @@
 To do:
 Docstrings
-Plane
-explosion
-bomb
-test file/text
+turret fire
+test file
