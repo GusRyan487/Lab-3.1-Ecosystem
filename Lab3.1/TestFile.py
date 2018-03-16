@@ -7,6 +7,7 @@ import time
 
 
 def main():
+    '''runs the program'''
     win.setBackground(color_rgb(20, 200, 255))
     back = Background(win)
     ac= AircraftCarrier(625,400,win)
