@@ -44,8 +44,9 @@ class AircraftCarrier(basicShip):
         self.boom = Image(Point(150,237.5),'nuke.png')
         self.boom.draw(self.win)
         dx = 175
-        while dx != -12.5
-        self.plane.move(-6.25,0)
+        while dx != -12.5:
+            time.sleep(.5)        
+            self.plane.move(-6.25,0)
         dx -= 6.25
 
 
