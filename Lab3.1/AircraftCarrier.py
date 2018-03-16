@@ -24,11 +24,13 @@ class AircraftCarrier(basicShip):
         self.bomb = Image(Point(175,0),'bomb.png')
 
     def acmove(self,x,y):
+        '''moves ship and plane'''
         self.move(x,y)
         self.plane.undraw()
         self._plane()
 
     def dropTheBomb(self):
+        '''moves plane and drops bomb'''
         dy = 420
         while dy != 100:
             self.plane.move( -6.25, -5)
