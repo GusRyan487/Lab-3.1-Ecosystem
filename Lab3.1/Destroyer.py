@@ -13,6 +13,7 @@ class Destroyer(basicShip):
 
 
     def createDName(self):
+        '''creates the destroyer id number'''
         ran = random.randint(1, 99)
         if ran < 10:
             ran = '0' + str(ran)
@@ -33,6 +34,7 @@ class Destroyer(basicShip):
         self.explosion.draw(self.win)
 
     def destMove(self, x, y):
+        '''moves gun and the destroyer'''
         self.move(x, y)
         self.gun.undraw()
         self.turret.undraw()
