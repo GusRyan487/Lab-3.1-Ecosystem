@@ -17,40 +17,41 @@ class AircraftCarrier(basicShip):
         self.acName += str(ran)
         print('Created',self.acName)
 
-    def _plane(self):
-        '''Draws plane on ship'''
-        self.plane = Image(Point(self.x + 75, self.y - 20), 'plane_v2.png')
-        self.plane.draw(self.win)
-        self.bomb = Image(Point(175,0),'bomb.png')
-
     def acmove(self,x,y):
         '''moves ship and plane'''
         self.move(x,y)
         self.plane.undraw()
         self._plane()
 
-    def dropTheBomb(self):
-        '''moves plane and drops bomb'''
-        dy = 420
-        while dy != 100:
-            self.plane.move( -6.25, -5)
-            time.sleep(.5)
-            dy -= 5
-        self.bomb.draw(self.win)
-        dy = 100
-        while dy != 300:
-            self.bomb.move(0,10)
-            time.sleep(.25)
-            dy += 10
-        self.bomb.undraw()
-        self.boom = Image(Point(150,237.5),'nuke.png')
-        self.boom.draw(self.win)
-        dx = 175
-        while dx != -12.5:
-            time.sleep(.5)        
-            self.plane.move(-6.25,0)
-        dx -= 6.25
+    class Plane(object):
 
+        def _plane(self):
+            '''Draws plane on ship'''
+            self.plane = Image(Point(self.x + 75, self.y - 20), 'plane_v2.png')
+            self.plane.draw(self.win)
+            self.bomb = Image(Point(250,100),'bomb.png')
+
+            def dropTheBomb(self):
+                '''moves plane and drops bomb'''
+                dy = 420
+                while dy != 100:
+                    self.plane.move(-6.25, -5)
+                    time.sleep(.1)
+                    dy -= 5
+                self.bomb.draw(self.win)
+                dy = 100
+                while dy != 300:
+                    self.bomb.move(0, 10)
+                    time.sleep(.25)
+                    dy += 10
+                self.bomb.undraw()
+                self.boom = Image(Point(150, 237.5), 'nuke.png')
+                self.boom.draw(self.win)
+                dx = 175
+                while dx != -10:
+                    time.sleep(.1)
+                    self.plane.move(-6.25, 0)
+                    dx -= 5
 
 
 
