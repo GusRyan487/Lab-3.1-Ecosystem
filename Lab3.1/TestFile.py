@@ -12,7 +12,8 @@ def main():
     '''runs the program'''
     win.setBackground(color_rgb(20, 200, 255))
     back = Background(win)
-    dest = Destroyer(600, 400, win)
+    t = Turret(win,600,400)
+    dest = Destroyer(600, 400, win,t)
     time.sleep(2)
     x = 600
     while x != 400:
@@ -21,7 +22,7 @@ def main():
     dest.destMove(400, 400)
     time.sleep(2)
     back.blast()
-    dest.Turret.explosion.draw(win)
+    dest.turret.explosion.draw(win)
     time.sleep(1.5)
     x = 400
     while x != 1000:
